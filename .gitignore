@@ -1,0 +1,17 @@
+# 环境变量（含真实密钥，勿提交）
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 运行时
+.app.pid
+app.log
+*.log
+
+# 大批 mock 数据（232MB，已导入达梦库；克隆后按 data 目录 README 重新导入）
+data/

@@ -1,0 +1,1154 @@
+================================================================================
+RPT_CUST_LOAN_DETAIL | 客户贷款余额表 | 9 fields
+    CCY_DESC                   VARCHAR2(100)  币种
+    CST_ID                     VARCHAR2(18)   客户编号
+    CUST_NAME                  VARCHAR2(600)  
+    LOAN_BAL_W                 NUMBER(22)     贷款余额
+    LOAN_BAL_WRMB              NUMBER(22)     贷款余额折人民币
+    ORG_ID                     VARCHAR2(40)   
+    PROJECT_NAME               VARCHAR2(1024) 项目名称
+    PROJECT_NO                 VARCHAR2(60)   项目编号
+    WORK_DT                    DATETIME(8)    数据日期
+================================================================================
+TBCCA020 | 客户其它属性信息表 | 46 fields
+    ATUMS_DVLP_IND             CHAR(1)        自主开发标志
+    BL_ACC_CRG_AMT             DECIMAL(22)    单户授信金额
+    BRWR_CGYCD                 CHAR(1)        借款人类别代码
+    BRWR_RSK_QOT               DECIMAL(22)    借款人风险限额
+    CNTN_SUBS_CST_IND          CHAR(1)        包含子公司客户标志
+    CORE_ENTP_STCD             CHAR(1)        核心企业状态代码
+    CORE_ENTP_SZ_CD            CHAR(1)        核心企业规模代码
+    CRERUN_IND                 CHAR(1)        事业单位标志
+    CRER_PNUM                  DECIMAL(22)    从业人数
+    CST_OTHR_ATTR_RMRK         VARCHAR(1500)  #客户其他属性备注
+    CST_PREF_CTC_INF           VARCHAR(50)    客户首选联系信息
+    DVLP_MEANS_CD              CHAR(2)        开发手段代码
+    ENTP_BLNG_STG_CD           CHAR(2)        企业所属阶段代码
+    ENTP_IDY_CLCD              CHAR(2)        企业行业分类代码
+    EXT_TRD_OPRT_FLG_INF       VARCHAR(40)    对外贸易备案信息
+    EXT_TRD_OPRT_FLG_INF       VARCHAR(40)    对外贸易经营备案信息
+    FNC_CGY_ENTP_IND           CHAR(1)        融资类企业标志
+    HLDGSHRHORATCTRLPSNNM      VARCHAR(180)   控股股东或实际控制人姓名
+    IDYQUALFGDROAINSPTNTM      CHAR(8)        行业资质等级最近一次年检时间
+    IDYQUALFGDROAINSPTNTM      CHAR(8)        行业资质等级最近一次年检时间
+    IDY_QUALF_GRD_DSC          VARCHAR(60)    行业资质等级描述
+    IDY_QUALF_GRD_OBTN_TM      CHAR(8)        行业资质等级获得时间
+    ISCCBSPLCSTCFNDCSTIND      CHAR(1)        为我行专项建设基金客户标志
+    ISCCBSPLCSTCFNDCSTIND      CHAR(1)        为我行专项建设基金客户标志
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    OPRG_AREA                  DECIMAL(22)    营业面积
+    OPRT_AREA_OWS              VARCHAR(120)   经营场地所有权
+    ORG_ID                     VARCHAR(19)    组织编号
+    SOC_RCMM_CD                CHAR(2)        社会推荐代码
+    ST_TP_SME_IND              CHAR(1)        科技型中小企业标志
+    SUBS_SCOP_ECD              VARCHAR(100)   子公司范围编码
+    SUPR_SPVS_DEPT_NM          VARCHAR(300)   上级主管部门名称
+    THESMLANDMDENTPCHRCD       CHAR(1)        中小企业性质代码
+    THESMLANDMDENTPCRLINE      DECIMAL(22)    中小企业信用额度
+    THESMLANDMDMSDCSTTPCD      CHAR(1)        中小客户类型代码
+    THESMLANDMDMSDEPCRGLN      DECIMAL(22)    中小企业授信额度
+    TMS                        TIMESTAMP(8)   #时间戳
+    TWFNDTHESAMDSDENTPIND      CHAR(1)        台资中小企业标志
+    WRK_AREA                   DECIMAL(22)    办公面积
+    YR_SALE_AMT                DECIMAL(22)    年销售额
+================================================================================
+TBCCA030 | 增值税信息表 | 27 fields
+    BNK_ACCNO                  CHAR(32)       银行账号
+    BNK_ACCNO                  CHAR(32)       银行账号
+    CODT                       CHAR(8)        截止日期
+    DPBKNM                     VARCHAR(600)   开户行名称
+    DTL_ADR                    VARCHAR(240)   详细地址
+    EMAIL                      VARCHAR(80)    电子邮箱
+    ISSADDVALTXSPPSINVIND      CHAR(1)        开具增值税专用发票标志
+    ISSDADVTTXSPPSINVIND       CHAR(1)        开具增值税专用发票标志
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    NEW_TAXPYR_ID_NO           VARCHAR(19)    新纳税人识别号
+    NEW_TAXPYR_ID_NO           VARCHAR(120)   新纳税人识别号
+    ORG_ID                     VARCHAR(19)    组织编号
+    RMRK                       VARCHAR(600)   备注
+    SMS_NTC_IND                CHAR(1)        短信通知标志
+    SRTDT                      CHAR(8)        起始日期
+    TAXPYR_IDNT_TPCD           CHAR(2)        纳税人身份类型代码
+    TELCTCMOD_NO               VARCHAR(50)    电话联系方式号码
+    TELCTCMOD_NO               VARCHAR(50)    电话联系方式号码
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBCCA040 | 客户信息映射表 | 7 fields
+    CST_ID                     CHAR(18)       客户编号
+    ORIBSCINF_TEMP_CST_ID      VARCHAR(18)    原基本信息临时客户编号
+    ORI_BSC_INF_CST_ID         VARCHAR(18)    原基本信息客户编号
+    ORI_CORE_CST_ID            VARCHAR(18)    原核心客户编号
+    ORI_HK_BR_CST_ID           VARCHAR(18)    原香港分行客户编号
+    RCRD_ID_SN                 VARCHAR(18)    记录编号序号
+    TMS                        TIMESTAMP(8)   时间戳
+================================================================================
+TBCCA050 | 多实体映射表 | 6 fields
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MPNG_ENT_ID                CHAR(5)        #映射实体编号
+    ORI_ENT_ID                 CHAR(5)        #原实体编号
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBCCA060 | 客户其他信息 | 50 fields
+    ADR_MODE_CD                CHAR(1)        地址模式代码
+    AFM_TMS                    VARCHAR(19)    #认定时间戳
+    AHN_INF_DSC                VARCHAR(600)   授权信息描述
+    BLNG_RGON_CD               CHAR(1)        所属区域代码
+    BNKINSIDOUTS_IND           CHAR(1)        行内外标志
+    CORE_CST_CTCD              CHAR(3)        核心客户种类代码
+    CORE_CST_TPCD              CHAR(1)        核心客户类型代码
+    CR_REVW_DEPT_CD            VARCHAR(20)    信用评审部门代码
+    CST_ANUL_PRTY_GRD_CD       CHAR(1)        客户年度优先等级代码
+    CST_CGY_ECD                VARCHAR(20)    客户类别编码
+    CST_CRLN_CGYCD             CHAR(2)        客户信贷类别代码
+    CST_DTL_CGYCD              CHAR(7)        客户明细类别代码
+    CST_GRD_CLCD               VARCHAR(6)     客户等级分类代码
+    CST_GRGRD_CD               VARCHAR(20)    客户信用等级代码
+    CST_GRPCST_IND             CHAR(1)        客户集团客户标志
+    ENTP_LVL_CD                VARCHAR(20)    企业级别代码
+    FNC_INST_TPCD              CHAR(6)        金融机构类型代码
+    FNC_PLTFRM_IND             CHAR(1)        融资平台标志
+    FNINS_IND                  CHAR(1)        金融机构标志
+    GRPCST_IND                 CHAR(1)        集团客户标志
+    IMPEXPRGT_IND              CHAR(1)        进出口权标志
+    INTRT_PRFT_ENTP_CLCD       CHAR(2)        利率优惠企业分类代码
+    IVADFC_TPCD                CHAR(1)        投融资类型代码
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    LSTD_ENTP_IND              CHAR(1)        上市企业标志
+    MJR_CST_IND                CHAR(1)        重大客户标志
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    ORG_ID                     VARCHAR(19)    组织编号
+    ORG_INST_CGYCD             CHAR(2)        组织机构类别代码
+    ORI_CORE_IDY_CD            CHAR(3)        原核心行业代码
+    ORI_CORE_SPCLZ_IDY_CD      CHAR(5)        原核心特色行业代码
+    PCSG_ENTP_TPCD             CHAR(1)        处理企业类型代码
+    PLTFRM_CGY_BRWR_TPCD       CHAR(1)        平台类借款人类型代码
+    PRTY_GRD_AFM_TMS           VARCHAR(19)    #优先等级认定时间戳
+    PRT_LNG_CTCD               CHAR(1)        打印语言种类代码
+    RCRD_EXPY_TMS              TIMESTAMP(8)   #记录失效时间戳
+    RGON_RSK_ATTR              VARCHAR(20)    地区风险属性
+    RGON_RSK_ATTR              VARCHAR(20)    地区风险属性
+    RSK_CTY_CD                 CHAR(3)        风险国家代码
+    SQTRSTL_RFM_BRWR_IND       CHAR(1)        棚户区改造借款人标志
+    STLN_IND                   CHAR(1)        助学贷款标志
+    TAXPYMT_IND                CHAR(1)        纳税标志
+    TMS                        TIMESTAMP(8)   #时间戳
+    TOT_AST                    DECIMAL(22)    总资产
+    TOT_AST_CCYCD              CHAR(3)        总资产币种代码
+================================================================================
+TBCCA130 | 客户风险预警信号表 | 14 fields
+    CST_ID                     CHAR(18)       客户编号
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    RMRK                       VARCHAR(600)   备注
+    RSKWARN_SGN_LVL1_IDX       VARCHAR(3)     风险预警信号一级指标
+    RSKWARN_SGN_LVL2_IDX       VARCHAR(3)     风险预警信号二级指标
+    RSK_WARN_SGN_ID            VARCHAR(32)    风险预警信号编号
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBCCA140 | 客户关注事件表 | 14 fields
+    CST_ID                     CHAR(18)       客户编号
+    FCS_EV_ID                  VARCHAR(32)    关注事件编号
+    FCS_EV_LVL1_IDX_CD         VARCHAR(3)     关注事件一级指标代码
+    FCS_EV_LVL2_IDX_CD         VARCHAR(3)     关注事件二级指标代码
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    RMRK                       VARCHAR(600)   备注
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBCCA150 | 客户附件管理表 | 21 fields
+    ATCH_CGYCD                 CHAR(2)        附件类别代码
+    ATCH_CMNT                  VARCHAR(600)   附件说明
+    CST_ATCH_ID                VARCHAR(100)   客户附件编号
+    CST_ID                     CHAR(18)       客户编号
+    FILE_NM                    VARCHAR(600)   文件名称
+    FILE_NM                    VARCHAR(60)    文件名称
+    FILE_UPLOAD_EMPID          CHAR(8)        文件上传员工编号
+    FILE_UPLOAD_EMPID          CHAR(8)        文件上传员工编号
+    IMG_FILE_ID                VARCHAR(120)   #影像文件编号
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    PRJ_ID                     VARCHAR(120)   项目编号
+    TMS                        TIMESTAMP(8)   #时间戳
+    UPLOAD_DT                  CHAR(8)        上传日期
+================================================================================
+TBCCA160 | 集团信息表 | 15 fields
+    ALCT_EMPID                 CHAR (8)       分配员工编号
+    BLNG_INSID                 CHAR (9)       所属机构编号
+    CRT_EMPID                  CHAR (8)       创建员工编号
+    CRT_INSID                  CHAR (9)       创建机构编号
+    ESTB_TM                    TIMESTAMP (8)  # 建立时间
+    GRPCST_RSK_CLCD            CHAR (2)       集团客户风险分类代码
+    GRP_BLG_CD                 CHAR (1)       集团归属代码
+    GRP_BSN_SPV_ID             CHAR (8)       集团业务主管编号
+    GRP_CRGRD_CD               VARCHAR (4)    集团信用等级代码
+    GRP_ENGSHTNM               VARCHAR (180)  集团英文简称
+    GRP_ID                     VARCHAR (19)   集团编号
+    GRP_IND                    CHAR (1)       集团标志
+    GRP_LVL_CD                 CHAR (2)       集团级别代码
+    GRP_NM                     VARCHAR (600)  集团名称
+    GRP_SPV_TPCD               CHAR (1)       集团主管类型代码
+================================================================================
+TBCCA170 | 集团成员客户信息 | 24 fields
+    BSN_MT_ENT_IDR             CHAR(5)        
+    CST_ID                     CHAR(18)       客户编号
+    GRP_ID                     VARCHAR(19)    集团编号
+    GRP_IND                    CHAR(1)        集团标志
+    HLDG_PSN_NM                VARCHAR(180)   控股人名称
+    HOLDSHRPCT                 DECIMAL(22)    持股比例
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MBR_POS                    VARCHAR(60)    成员地位
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    REL_LVL_ECD                CHAR(20)       关系层次编码
+    RGDT                       CHAR(8)        登记日期
+    SEQ_NO                     DECIMAL(22)    顺序号
+    SN                         DECIMAL(22)    #序号
+    SPV_CO_IND                 CHAR(1)        SPV公司标志
+    SUPR_CST_ID                CHAR(18)       上级客户编号
+    SUPR_CST_RETPCO            CHAR(7)        上级客户关系类型代码
+    TMS                        TIMESTAMP(8)   #时间戳
+    WTHR_SBJ_TP_IND            CHAR(1)        #是否主体类型标志
+================================================================================
+TBCCA180 | 集团管理信息 | 25 fields
+    ACGDVLPBNKETMGTGLTCD       CHAR(1)        按开发银行现有管理制代码
+    ACGPCP_CPTL_OPRT_CLCD      CHAR(1)        按参与资本运作分类代码
+    ACG_CRG_MODE_CLCD          CHAR(1)        按授信模式分类代码
+    ACG_FNDS_MGTMTD_CLCD       CHAR(1)        按资金管理方式分类代码
+    ACG_GRP_MAINBSN_CLCD       CHAR(1)        按集团主营业务分类代码
+    ACG_MRG_RPT_SCOP_CLCD      CHAR(1)        按合并报表范围分类代码
+    ACG_OWS_CHAR_CLCD          CHAR(1)        按所有制性质分类代码
+    DSMKLYRWBT_CTYRGN_CD       CHAR(3)        决策层所在国家地区代码
+    DSMK_LYR_LO_ZON            VARCHAR(180)   决策层所在地区
+    DSMK_LYR_WBT_BR_NO         CHAR(9)        决策层所在分行号
+    GRPCST_CL_ACRTDO_CD        CHAR(1)        集团客户分类依据代码
+    GRP_CRGRD_CD               VARCHAR(4)     集团信用等级代码
+    GRP_ID                     VARCHAR(19)    集团编号
+    GRP_IND                    CHAR(1)        集团标志
+    GRP_LVL_CD                 CHAR(2)        集团级别代码
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    OVSEA_CST_IND              CHAR(1)        境外客户标志
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBCCA200 | 客户交易信息表 | 18 fields
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    NLGPR_CNTPR_PD_ID          CHAR(15)       非法人交易对手产品编号
+    RLTV_CST_ID                CHAR(18)       关联客户编号
+    SPCLPPSCRR_CNTPR_TPCD      VARCHAR(6)     特定目的载体交易对手类型代
+    TMS                        TIMESTAMP(8    )    #时间戳
+    TRNST_TRD_IND              CHAR(1)        转口贸易标志
+    CNTPR_ID                   VARCHAR(21)    交易对手编号
+    CNTPR_NM                   VARCHAR(600    )    交易对手名称
+    CRT_DT                     CHAR(8)        创建日期
+    CRT_STFF_ID                CHAR(8)        创建人员编号
+    FNDS_CNTPR_ID              VARCHAR(21)    资金交易对手编号
+    FNDS_CRT_STFF_NM           VARCHAR(180    )    资金创建人员名称
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+================================================================================
+TBCCAAD0 | 参与人其他地址 | 16 fields
+    IP_OTHR_ADR_EFDT           CHAR(8)        
+    IP_OTHR_ADR_EXPDT          CHAR(8)        
+    IP_OTHR_ADR_MDF_RDSC       VARCHAR(30)    
+    IP_OTHR_ADR_SN             DECIMAL(22)    
+    IP_OTHR_ADR_TPCD           CHAR(2)        
+    IP_OTHR_ADR_USE_TPCD       CHAR(7)        
+    LAST_UDT_EMPID             CHAR(8)        
+    LAST_UDT_INSID             CHAR(9)        
+    LAST_UDT_JRNL_NO           VARCHAR(25)    
+    LAST_UDT_OPRGDAY           CHAR(8)        
+    LCL_HR_GRD_SCND            CHAR(9)        
+    LCL_YRMO_DAY               CHAR(8)        
+    MULTI_TENANCY_ID           CHAR(5)        
+    ORG_ID                     VARCHAR(19)    
+    OTHR_ADR                   VARCHAR(240)   
+    TMS                        TIMESTAMP(8)   
+================================================================================
+TBCCASS0 | 合约快照 | 29 fields
+    AR_COLL_IND                CHAR(1)        #合约汇集标志
+    AR_EFDT                    CHAR(8)        合约生效日期
+    AR_ESTB_INSID              CHAR(9)        合约建立机构编号
+    AR_EXDAT                   CHAR(8)        合约到期日期
+    AR_ID                      VARCHAR(23)    合约编号
+    AR_MDF_BFR_BLNG_ORG        VARCHAR(19)    合约变更前所属组织编号
+    AR_STCD                    CHAR(6)        合约状态代码
+    AR_TMDT                    CHAR(8)        合约终止日期
+    ASPD_ECD                   CHAR(8)        可售产品编码
+    BSPD_ECD                   CHAR(3)        基础产品编码
+    BSPD_ECD                   CHAR(3)        基础产品编码
+    CRT_EMPID                  CHAR(8)        创建员工编号
+    CRT_EMPID                  CHAR(8)        创建员工编号
+    CST_EXT_ACCNO              VARCHAR(40)    客户外部账号
+    CST_EXT_ACCNO              VARCHAR(40)    客户外部账号
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    ORG_ID                     VARCHAR(19)    组织编号
+    PDAR_NM                    VARCHAR(240)   产品合约名称
+    PDAR_TPCD                  CHAR(4)        产品合约类型代码
+    RETPCD                     CHAR(7)        关系类型代码
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBCCBRC0 | 机构和客户关系 | 17 fields
+    CCBINS_AND_CST_RELTPCD     CHAR(7)        开行机构和客户关系类型代码
+    CCBINS_CSTREL_MDF_RDSC     VARCHAR(60)    开行机构和客户关系变更原因描述
+    CCBINS_ID                  VARCHAR(9)     开行机构编号
+    CST_ID                     CHAR(18)       客户编号
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           VARCHAR(25)    #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    REL_EDDT                   CHAR(8)        关系结束日期
+    REL_EDTM                   CHAR(6)        关系结束时间
+    REL_STDT                   CHAR(8)        关系开始日期
+    REL_STTM                   CHAR(6)        关系开始时间
+    RLTV_CSTMGR_PNUM           DECIMAL(22)    关联客户经理人数
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBCCCFD0 | 投资人出资信息 | 21 fields
+    ACT_INPLC_CPTL_AMT         DECIMAL(22)    实际到位资金金额
+    EXT_IVS_MOD_ECD            VARCHAR(40)    #对外投资方式编码
+    FNDD_POS_CD                CHAR(2)        出资地位代码
+    HOLDSHRPCT                 DECIMAL(22)    持股比例
+    IVSR_FNDD_INF_SN           DECIMAL(22)    #投资人出资信息序号
+    IVSR_TPCD                  CHAR(2)        投资人类型代码
+    IVS_AMT                    DECIMAL(22)    投资金额
+    IVS_AMT_CCYCD              CHAR(3)        投资金额币种代码
+    IVS_CMNT                   VARCHAR(60)    投资说明
+    IVS_DT                     CHAR(8)        投资日期
+    IVS_SHR_NUM                DECIMAL(22)    投资股份数量
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    PRIM_ORG_ID                VARCHAR(19)    主组织编号
+    SCDY_ORG_ID                VARCHAR(19)    从组织编号
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBCCCHKD0 | 海外参与人邮政地址 | 27 fields
+    CITY_CD                    CHAR(6)        市代码
+    CNTYANDDSTC_CD             CHAR(6)        区县代码
+    CTYRGON_CD                 CHAR(3)        国家地区代码
+    CTY_LNG_CD                 CHAR(2)        国家语言代码
+    DFALT_IND                  CHAR(1)        默认标志
+    IP_PST_ADR_EFDT            CHAR(8)        参与人邮政地址生效日期
+    IP_PST_ADR_EXPDT           CHAR(8)        参与人邮政地址失效日期
+    IP_PST_ADR_MDF_RDSC        VARCHAR(30)    参与人邮政地址变更原因描述
+    IP_PST_ADR_SN              DECIMAL(22)    #参与人邮政地址序号
+    IP_PST_ADR_USE_TPCD        CHAR(7)        参与人邮政地址用途类型代码
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    ORG_ID                     VARCHAR(19)    组织编号
+    PROV_CD                    CHAR(6)        省代码
+    PST_PRSV_ADR_1             VARCHAR(36)    邮政保存地址1
+    PST_PRSV_ADR_2             VARCHAR(36)    邮政保存地址2
+    PST_PRSV_ADR_3             VARCHAR(36)    邮政保存地址3
+    PST_PRSV_ADR_4             VARCHAR(36)    邮政保存地址4
+    PST_PRSV_ADR_5             VARCHAR(36)    邮政保存地址5
+    PST_PRSV_ADR_6             VARCHAR(36)    邮政保存地址6
+    TMS                        TIMESTAMP(8)   #时间戳
+    ZIPECD                     VARCHAR(30)    邮政编码
+================================================================================
+TBCCCOIP0 | 参与人 | 39 fields
+    ADMNHIER_CD                CHAR (2)       行政级别代码
+    AVY_RGON_DSC               VARCHAR (240)  活动地域描述
+    BLIST_CST_IND              CHAR (1)       黑名单客户标志
+    BSC_DEP_ACCNO              VARCHAR (40)   基本存款账户账号
+    BSC_DEP_ACC_DPBKNM         VARCHAR (600)  基本存款账户开户行名称
+    BSC_DEP_ACC_DEPBNK_CD      CHAR (6)       基本存款账户开户行代码
+    BSN_MGR_UNIT_NM            VARCHAR (180)  业务主管单位名称
+    CNTSD_ORG_TPCD             CHAR (2)       农村组织类型代码
+    CRERUN_BDGT_TPCD           CHAR (2)       事业单位预算类型代码
+    CTC_INF_RMRK               VARCHAR (240)  联系信息备注
+    ENTFNDDPSNECNCMPCD         CHAR (3)       企业出资人经济成分代码
+    ENTP_SZ_CD                 CHAR (2)       企业规模代码
+    ENTP_SZ_STDT               CHAR (8)       企业规模起始日期
+    ESTB_EMPID                 CHAR (8)       建立员工编号
+    ESTB_INSID                 CHAR (9)       建立机构编号
+    EXMPT_RGS_SOC_ORG_IND      CHAR (1)       免登记社会团体标志
+    FEE_SRCCD                  CHAR (2)       经费来源代码
+    FREETRDEZONCSTMR_TPCD      CHAR (1)       自由贸易区客户类型代码
+    FST_AR_DT                  CHAR (8)       首次合约日期
+    FST_CR_REL_DT              CHAR (8)       首次信贷关系日期
+    GOVFNCPLF_CVR_STTN_CD      CHAR (2)       政府融资平台覆盖情况代码
+    GOVFNCPLF_TPCD             CHAR (2)       政府融资平台类型代码
+    HHNW_TECH_ENTP_IND         CHAR (1)       高新技术企业标志
+    HLD_UNIT_NM                VARCHAR (180)  举办单位名称
+    HV_LGLPSN_QUA_IND          CHAR (1)       具备法人资格标志
+    IMPEXPRGT_IND              CHAR (1)       进出口权标志
+    ININSTSET_PRFTGRD_DSC      VARCHAR (240)  内部机构设置完善度描述
+    IPOTHBKINF_IND_CNTNT       VARCHAR (30)   # 参与人他行信息标志内容
+    IP_CUR_STCD                CHAR (6)       参与人当前状态代码
+    IP_TPCD                    CHAR (1)       参与人类型代码
+    LAST_UDT_EMPID             CHAR (8)       最后更新员工编号
+    LAST_UDT_INSID             CHAR (9)       最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR (25)      # 最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR (8)       # 最后更新营业日
+    LCL_HR_GRD_SCND            CHAR (9)       # 本地时分秒
+    LCL_YRMO_DAY               CHAR (8)       # 本地年月日
+    LSTD_ENTP_TP_ECD           CHAR (5)       上市企业类型编码
+    MOD_RCRD_LAST_MDSN         DECIMAL (22)   修改记录最后变更序号
+    MRG_TO_ORG_ID              VARCHAR (19)   合并至组织编号
+================================================================================
+TBCCCPR0 | 客户和员工关系 | 16 fields
+    CST_ID                     CHAR(18)       客户编号
+    EMPE_BLNG_MTIT_ID          CHAR(9)        员工所属管理机构编号
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    REL_EDDT                   CHAR(8)        关系结束日期
+    REL_EDTM                   CHAR(6)        关系结束时间
+    REL_STDT                   CHAR(8)        关系开始日期
+    REL_STTM                   CHAR(6)        关系开始时间
+    TMS                        TIMESTAMP(8)   #时间戳
+    CCB_EMPID                  CHAR(8)        开行员工编号
+    CST_AND_EMPE_RETPCD        CHAR(7)        客户和员工关系类型代码
+================================================================================
+TBCCCPRO | 客户和员工关系 | 16 fields
+    CCB_EMPID                  CHAR(8)        开行员工编号
+    CST_AND_EMPE_RETPCD        CHAR(7)        客户和员工关系类型代码
+    CST_ID                     CHAR(18)       客户编号
+    EMPE_BLNG_MTIT_ID          CHAR(9)        员工所属管理机构编号
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    REL_EDDT                   CHAR(8)        关系结束日期
+    REL_EDTM                   CHAR(6)        关系结束时间
+    REL_STDT                   CHAR(8)        关系开始日期
+    REL_STTM                   CHAR(6)        关系开始时间
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBCCGM80 | 集团主营业务板块信息 | 14 fields
+    ACG_ANUL                   CHAR(4)        会计年度
+    GRPMAINBSNPLT_DSC          VARCHAR(600)   集团主营业务板块描述
+    GRPMAINBSNPLT_INF_SN       DECIMAL(22)    集团主营业务板块信息序号
+    IDY_CD                     CHAR(5)        行业代码
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    ORG_ID                     VARCHAR(19)    组织编号
+    PFRT                       DECIMAL(22)    利润率
+    PLT_BSN_PFT_AMT            DECIMAL(22)    板块业务利润金额
+================================================================================
+TBCCGMB0 | 集团主营业务板块信息 | 15 fields
+    IDY_CD                     CHAR(5)        行业代码
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    ORG_ID                     VARCHAR(19)    组织编号
+    PFRT                       DECIMAL(22)    利润率
+    PLT_BSN_PFT_AMT            DECIMAL(22)    板块业务利润金额
+    PRIM_PLT_ORG_ID            CHAR(19)       主板组织编号
+    SALE_INCMAM                DECIMAL(22)    销售收入金额
+    SALE_INCM_CCYCD            CHAR(3)        销售收入币种代码
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBCCHKC0 | 香港客户特色信息表 | 30 fields
+    BLG_LRGSC_ENTNM            CHAR(11)       归属大型企业名称
+    CRT_EMPID                  CHAR(8)        创建员工编号
+    CRT_INSID                  CHAR(9)        创建机构编号
+    CR_TRND_PRST_CD            CHAR(3)        信用趋势展望代码
+    CTCPSN_ENG_NM              VARCHAR(60)    联系人英文名称
+    DMST_INST_CLCD             CHAR(3)        国内机构分类代码
+    DMST_INST_CLCD_RSN         VARCHAR(300)   国内机构分类代码原因
+    ECN_DEPD_ENT_CST_ID        CHAR(18)       经济依赖实体客户编号
+    ECN_DEPD_ENT_IND           CHAR(1)        经济依赖实体标志
+    ESTB_TM                    TIMESTAMP(8)   #建立时间
+    HKMA_CST_TPCD              CHAR(2)        香港金管局客户类型代码
+    HK_CST_ECN_CHAR_CD         CHAR(5)        香港客户经济性质代码
+    HK_CST_TPCD                CHAR(1)        香港客户类型代码
+    HK_IDY_CTCD                CHAR(9)        香港行业种类代码
+    HK_LDGR_INSID              CHAR(9)        香港核算机构编号
+    HQ_OPRN_LND_CTY            CHAR(3)        总部营运地国家
+    INNR_LND_BR_INSID          CHAR(9)        内地分行机构编号
+    INR_CST_TPCD               CHAR(7)        内部客户类型代码
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    ORG_ID                     VARCHAR(19)    组织编号
+    PROV_CD                    CHAR(6)        省代码
+    RLTV_HQ_CRG_CST_ID         CHAR(18)       关联总行授信客户编号
+    RSK_CTY_CD                 CHAR(3)        风险国家代码
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBCCILP0 | 机构多法人信息 | 20 fields
+    ACCR_TPCD_SET              VARCHAR (200)  会计准则类型代码集合
+    CRCL_TAX_TPCD              CHAR (1)       流转税类型代码
+    CTYRGON_CD                 CHAR (3)       国家地区代码
+    DST_EDDT                   CHAR (8)       # 夏令时结束日期
+    DST_EDTM                   CHAR (6)       # 夏令时结束时间
+    DST_IND                    CHAR (1)       # 夏令时标志
+    DST_STDT                   CHAR (8)       # 夏令时开始日期
+    DST_STTM                   CHAR (6)       # 夏令时开始时间
+    EXPL_CD                    CHAR (2)       # 实例编号
+    HR_MNS                     CHAR (2)       # 时差
+    INST_SVRLLGPSN_ID          CHAR (5)       机构多法人编号
+    INST_SVRLLGPSN_NM          VARCHAR (180)  机构多法人名称
+    LAST_UDT_DT_TM             TIMESTAMP (8)  # 最后更新日期时间
+    LGLCY_CD                   CHAR (3)       本币代码
+    LNG_ID                     VARCHAR (5)    # 语言标识
+    PREF_LNG_CD                CHAR (2)       首选语言代码
+    SVRLLGPSNADCHAINID         CHAR (9)       多法人平台检查挂机构编号
+    SVRLLGPSN_CURG_INSID       CHAR (9)       多法人清算机构编号
+    TMS                        TIMESTAMP (8)  # 时间戳
+    TMZON_CD                   CHAR (2)       时区代码
+================================================================================
+TBCCINV0 | 投资人 | 31 fields
+    HLDG_SHRH_IND              CHAR(1)        控股股东标志
+    HOLDSHR_IND                CHAR(1)        持股标志
+    IVR_TPCD                   CHAR(2)        投资人类型代码
+    IVS_AMT_INPLC_RATE         DECIMAL(22)    投资金额到位率
+    IVS_CMNT                   VARCHAR(600)   投资说明
+    IVS_REL_CUR_STCD           CHAR(6)        投资关系当前状态代码
+    IVS_RLV_TPCD               CHAR(2)        投资人投资类型代码
+    IVS_TEAM_TPCD              CHAR(1)        投资团队类型代码
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MRG_RPT_IND                CHAR(1)        合并报表标志
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    PRIM_ORG_ID                VARCHAR(19)    主组织编号
+    PRIM_ORG_ID                VARCHAR(19)    主组织编号
+    REL_EDDT                   CHAR(8)        关系结束日期
+    REL_EDDT                   CHAR(8)        关系结束日期
+    REL_STDT                   CHAR(8)        关系开始日期
+    REL_STDT                   CHAR(8)        关系开始日期
+    SCDY_ORG_ID                VARCHAR(19)    从组织编号
+    SCDY_ORG_ID                VARCHAR(19)    从组织编号
+    SHRH_RLTV_TPCD             CHAR(2)        股东关联类型代码
+    SHRH_RLV_TPCD              CHAR(2)        股东关联类型代码
+    SHRH_STC_CRPND_DT          CHAR(8)        股东结构对应日期
+    SHRH_STC_CRPNT_DT          CHAR(8)        股东结构对应日期
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBCCLST0 | 组织上市情况 | 53 fields
+    ACQCO_ORG_ID               VARCHAR(19)    被收购方组织编号
+    CCBEQTYVALAFF_ANL_DSC      VARCHAR(240)   我行股权价值影响情况分析描述
+    CCYCD                      CHAR(3)        币种代码
+    CRCL_SHRNUM                DECIMAL(22)    流通股数
+    CRNYR_NEW_ISSU_STK         DECIMAL(22)    当年新增发行股票
+    CST_STK_FTM_ISSU_PRC       DECIMAL(22)    客户股票首次发行价
+    CTYRGON_CD                 CHAR(3)        
+    EPS_AMT                    DECIMAL(22)    每股收益金额
+    EXG_NM                     VARCHAR(240)   交易所名称
+    FRCST_ISSU_DT              CHAR(8)        预计发行日期
+    FRCST_ISSU_PRC             DECIMAL(22)    预计发行价格
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    LISTG_CCB_HOLDSHRNUM       DECIMAL(22)    上市后我行持股数
+    LISTG_CCB_HOLDSHRPCT       DECIMAL(22)    上市后我行持股比例
+    LMTSALE_AMT                DECIMAL(22)    限售额
+    LMTSALE_IND                CHAR(1)        限售标志
+    LMTSALE_TRM                DECIMAL(22)    限售期限
+    LSTDT                      CHAR(8)        上市日期
+    LSTD_INF_RGDT              TIMESTAMP(8)   上市信息登记日期
+    LSTD_INF_STK_SHRTNM        VARCHAR(180)   上市信息股票简称
+    LSTD_MTDCD                 CHAR(1)        上市方式代码
+    LSTD_TPCD                  CHAR(2)        上市类型代码
+    LSTD_WAY_CD                CHAR(1)        上市途径代码
+    LSTYREND_CPTLSTK_TNUM      DECIMAL(22)    上年末股本总量
+    MAINBSN_PRTTN_IND          CHAR(1)        主营业务分拆标志
+    MJR_ITM_CGYCD              CHAR(2)        重大事项类别代码
+    MJR_ITM_DEFN_CMNT          VARCHAR(600)   重大事项具体说明
+    MJR_ITM_INF_DSC            VARCHAR(240)   重大事项信息描述
+    MJR_ITM_NM                 VARCHAR(60)    重大事项名称
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    NAVPS_AMT                  DECIMAL(22)    每股净资产金额
+    ORGLSSTTNCRST_CD           CHAR(6)        组织上市情况当前状态代码
+    REDCHP_LSTD_IND            CHAR(1)        红筹上市标志
+    REQ_DSMK_DEFN_ITM_DSC      VARCHAR(240)   需要决策具体事项描述
+    RGPSN                      VARCHAR(240)   登记人
+    RGS_UNIT                   VARCHAR(240)   登记单位
+    SHREXGPCT                  DECIMAL(22)    换股比例
+    STK_ID                     CHAR(6)        股票编号
+    STK_INF_RMRK               VARCHAR(240)   股票信息备注
+    STK_ISSU_NUM               DECIMAL(22)    股票发行数
+    STK_LSTD_PLC_CD            CHAR(4)        股票上市地点代码
+    STK_NM                     VARCHAR(240)   股票名称
+    ST_STK_IND                 CHAR(1)        ST股票标志
+    S_INFO_SEDOLCODE           VARCHAR(50)    
+    TMS                        TIMESTAMP(8)   #时间戳
+    TOTCPTL_NUM                DECIMAL(22)    总股本数
+    VT_CODT                    CHAR(8)        表决截止日期  
+================================================================================
+TBCCOI10 | 组织行业信息 | 13 fields
+    IDYID_CLRSN_DSC            VARCHAR(60)    
+    IDYID_CNGISN_CD            CHAR(1)        
+    IDYID_OPIN_TPCD            CHAR(1)        
+    IDY_CD                     VARCHAR(5)     
+    LAST_UDT_EMPID             CHAR(8)        
+    LAST_UDT_INSID             CHAR(9)        
+    LAST_UDT_JRNL_NO           CHAR(25)       
+    LAST_UDT_OPRGDAY           CHAR(8)        
+    LCL_HR_GRD_SCND            CHAR(9)        
+    LCL_YRMO_DAY               CHAR(8)        
+    MULTI_TENANCY_ID           CHAR(5)        
+    ORG_ID                     VARCHAR(19)    
+    TMS                        TIMESTAMP(8)   
+================================================================================
+TBCCOIP0 | 参与人 | 59 fields
+    ORG_TPCD                   CHAR(3)        组织类型代码
+    OTHR_ATTR_IND_CNTNT        VARCHAR(60)    #其他属性标志内容
+    PBC_OPNACC_IND             CHAR(1)        人行开户标志
+    PREF_LNG_CD                CHAR(2)        首选语言代码
+    PRJ_LGLPSN_IND             CHAR(1)        项目法人标志
+    PRM_BSNLCNS_IND            CHAR(1)        永久营业执照标志
+    RCRD_ESTB_DT               CHAR(8)        #记录建立日期
+    RGST_CPAMT                 DECIMAL(22)    注册资金金额
+    RGST_CPTL_CCYCD            CHAR(3)        注册资金币种代码
+    SEACORP_IND                CHAR(1)        特殊经济区内企业标志
+    SHR_TOT_NUM                DECIMAL(22)    股份总数
+    SIGN_CO_AGRM_IND           CHAR(1)        签订合作协议标志
+    SPCL_ECN_ZON_TPCD          CHAR(2)        特殊经济区类型代码
+    ORG_RWRDPNSH_DSC           VARCHAR(240)   组织奖惩情况描述
+    OPRT_TRM_EDDT              CHAR(8)        经营期限结束日期
+    OPRT_TRM_STDT              CHAR(8)        经营期限起始日期
+    ORGACINCCPTL_AMT           DECIMAL(22)    组织实收资本金额
+    ORGJITM_IND_CNTNT          VARCHAR(30)    #组织重大事项标志内容
+    ORG_CHAR_CD                CHAR(4)        组织性质代码
+    ORG_CMPS_FORM_CD           CHAR(2)        组织组成形式代码
+    ORG_ESTB_DT                CHAR(8)        组织成立日期
+    ORG_ID                     VARCHAR(19)    组织编号
+    ORG_MAINBSN_DSC            VARCHAR(1500)  组织主营业务描述
+    ORG_MIX_BSN_DSC            VARCHAR(1500)  组织兼营业务描述
+    ORG_OPRT_SCOP_DSC          VARCHAR(3000)  组织经营范围描述
+    ORG_OTHR_STNDSC            VARCHAR(240)   组织其他情况描述
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    LSTD_ENTP_TP_ECD           CHAR(5)        上市企业类型编码
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MRG_TO_ORG_ID              VARCHAR(19)    合并至组织编号
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    NAL_ECN_DEPT_CD            CHAR(3)        国民经济部门代码
+    NLGPR_ORG_TPCD             CHAR(2)        非法人组织类型代码
+    NLPRMNTINST_IND            CHAR(1)        外地常设机构标志
+    OPRT_CHAR_CD               CHAR(2)        经营性质代码
+    GOVFNCPLF_TPCD             CHAR(2)        政府融资平台类型代码
+    HHNW_TECH_ENTP_IND         CHAR(1)        高新技术企业标志
+    HLD_UNIT_NM                VARCHAR(180)   举办单位名称
+    HV_LGLPSN_QUA_IND          CHAR(1)        具备法人资格标志
+    IMPEXPRGT_IND              CHAR(1)        进出口权标志
+    ININSET_PRFTRGD_DSC        VARCHAR(240)   内部机构设置完善度描述
+    IPOTHBKIND_IND_CNTNT       VARCHAR(30)    #参与人他行信息标志内容
+    IP_CUR_STCD                CHAR(6)        参与人当前状态代码
+    IP_TPCD                    CHAR(1)        参与人类型代码
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    ENTP_SZ_CD                 CHAR(2)        企业规模代码
+    ENTP_SZ_STDT               CHAR(8)        企业规模起始日期
+    ESTB_EMPID                 CHAR(8)        建立员工编号
+    ESTB_INSID                 CHAR(9)        建立机构编号
+    EXMPT_RGS_SOC_ORG_IND      CHAR(1)        免税登记社会团体标志
+    FEE_SRCCD                  CHAR(2)        经费来源代码
+    FREETRDEZONCSTMR_TPCD      CHAR(1)        自贸区客户类型代码
+    FST_AR_DT                  CHAR(8)        首次合约日期
+    FST_CR_REL_DT              CHAR(8)        首次信贷关系日期
+    GOVFNCPLF_CVR_STTN_CD      CHAR(2)        政府融资平台覆盖情况代码
+================================================================================
+TBCCPAD0 | 参与人邮政地址 | 22 fields
+    CITY_CD                    CHAR(6)        市代码
+    CNTYANDSTC_CD              CHAR(6)        区县代码
+    CTC_ADR_CNTNT              VARCHAR(1500)  联系地址内容
+    CTYRGN_CD                  CHAR(3)        国家地区代码
+    CTY_LNG_CD                 CHAR(2)        国家语言代码
+    DFALT_IND                  CHAR(1)        默认标志
+    IP_PST_ADR_EFDT            CHAR(8)        参与人邮政地址生效日期
+    IP_PST_ADR_EXPDT           CHAR(8)        参与人邮政地址失效日期
+    IP_PST_ADR_MDF_RDSC        VARCHAR(30)    参与人邮政地址变更原因描述
+    IP_PST_ADR_SN              DECIMAL(22)    #参与人邮政地址序号
+    IP_PST_ADR_USE_TPCD        CHAR(7)        参与人邮政地址用途类型代码
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    ORG_ID                     VARCHAR(19)    组织编号
+    PROV_CD                    CHAR(6)        省代码
+    TMS                        TIMESTAMP(8)   #时间戳
+    ZIPECD                     VARCHAR(30)    邮政编码
+================================================================================
+TBCCPID0 | 参与人识别信息 | 32 fields
+    ANULINSPTN_VLD_IND         CHAR(1)        年检有效标志
+    CRDT_ANULINSPTN_DT         CHAR(8)        证件年检日期
+    CRDT_EFDT                  CHAR(8)        证件生效日期
+    CRDT_EXDAT                 CHAR(8)        证件到期日期
+    CRDT_IMG_ID                VARCHAR(120)   证件影像编号
+    CTRYGON_CD                 CHAR(3)        国家地区代码
+    ID_INF_NO                  VARCHAR(120)   识别信息号
+    ID_INF_SN                  DECIMAL(22)    识别信息序号
+    ID_INF_TPCD                CHAR(4)        识别信息类型代码
+    ID_INF_TPCD                CHAR(4)        识别信息类型代码
+    IFIU_SID                   （截图未显示）        日期
+    IPID_CUR_STCD              CHAR(6)        参与人识别信息当前状态代码
+    IPID_EDDT                  CHAR(8)        #参与人识别信息结束日期
+    IPID_EDDT                  CHAR(8)        #参与人识别信息结束日期
+    IPID_STDT                  CHAR(8)        #参与人识别信息开始日期
+    IPID_STDT                  CHAR(8)        #参与人识别信息开始日期
+    ISSUCTF_AHR_LO             VARCHAR(240)   发证机关所在地
+    ISSUCTF_AHR_NM             VARCHAR(180)   发证机关名称
+    ISSUCTF_DT                 CHAR(8)        发证日期
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    ORG_ID                     VARCHAR(19)    组织编号
+    PROV_CD                    CHAR(6)        省代码
+    PROV_CD                    CHAR(6)        省代码
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBCCPLR0 | 参与人和位置关系 | 18 fields
+    ADIV_CD                    CHAR(6)        行政区划代码
+    CTYRGN_CD                  CHAR(3)        国家地区代码
+    IPLOREL_REL_DSC            VARCHAR(60)    参与人和位置关系描述
+    IPLOREL_REL_MDF_RDSC       VARCHAR(60)    参与人和位置关系变更原因描述
+    IPLOREL_REL_SN             DECIMAL(22)    #参与人和位置关系序号
+    IPLOREL_REL_TPCD           CHAR(7)        参与人和位置关系类型代码
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    ORG_ID                     VARCHAR(19)    组织编号
+    REL_EDDT                   CHAR(8)        关系结束日期
+    REL_STDT                   CHAR(8)        关系开始日期
+    STAT_RGON_CD               CHAR(3)        统计区域代码
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBCCPPR0 | 参与人和参与人关系 | 20 fields
+    IP_IP_REL_CUR_STCD         CHAR(6)        参与人和参与人关系当前状态代码
+    IP_IP_REL_DSC              VARCHAR(60)    参与人和参与人关系描述
+    IP_IP_REL_TPCD             CHAR(7)        参与人和参与人关系类型代码
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    PRIM_ORG_ID                VARCHAR(19)    主组织编号
+    REL_DRC_DSC                VARCHAR(30)    关系方向描述
+    REL_EDDT                   CHAR(8)        关系结束日期
+    REL_EDTM                   CHAR(6)        关系结束时间
+    REL_STDT                   CHAR(8)        关系开始日期
+    REL_STTM                   CHAR(6)        关系开始时间
+    SCDY_ORG_ID                VARCHAR(19)    从组织编号
+    SHRH_RLTV_TPCD             CHAR(2)        股东关联类型代码
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBCCPS10 | 组织关联人接口信息 | 18 fields
+    CRDT_AVLDT_EDDT            CHAR (8)       证件有效期结束日期
+    CRDT_AVLDT_STDT            CHAR (8)       证件有效期开始日期
+    CRDT_IMG_ID                VARCHAR (120)  证件影像编号
+    CST_ID                     CHAR (18)      客户编号
+    ID_INF_NM                  VARCHAR (180)  识别信息名称
+    ID_INF_NO                  VARCHAR (120)  识别信息号
+    ID_INF_TPCD                CHAR (4)       识别信息类型代码
+    LAST_UDT_EMPID             CHAR (8)       最后更新员工编号
+    LAST_UDT_INSID             CHAR (9)       最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR (25)      # 最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR (8)       # 最后更新营业日
+    LCL_HR_GRD_SCND            CHAR (9)       # 本地时分秒
+    LCL_YRMO_DAY               CHAR (8)       # 本地年月日
+    MOD_RCRD_LAST_MDSN         DECIMAL (22)   修改记录最后变更序号
+    MULTI_TENANCY_ID           CHAR (5)       # 多实体标识
+    NAT_CD                     CHAR (3)       国籍地区代码
+    ORG_RELPSN_ID              VARCHAR (19)   组织关联人编号
+    TMS                        TIMESTAMP (8)  # 时间戳
+================================================================================
+TBCCPSR0 | 组织和关联人关系 | 23 fields
+    ACT_CTRL_PSN_IND           CHAR(1)        
+    DSTROFWRK_STTN             VARCHAR(240)   
+    JN_UNIT_DT                 CHAR(8)        
+    LAST_UDT_EMPID             CHAR(8)        
+    LAST_UDT_INSID             CHAR(9)        
+    LAST_UDT_JRNL_NO           CHAR(25)       
+    LAST_UDT_OPRGDAY           CHAR(8)        
+    LCL_HR_GRD_SCND            CHAR(9)        
+    LCL_YRMO_DAY               CHAR(8)        
+    LGRPS_NM                   VARCHAR(150)   
+    MULTI_TENANCY_ID           CHAR(5)        
+    ORGANDRELPSNRLCRST_CD      CHAR(6)        
+    ORGANDRELPSNRL_DSC         VARCHAR(60)    
+    ORG_AND_RELPSN_RETPCD      CHAR(7)        
+    ORG_ID                     VARCHAR(19)    
+    ORG_RELPSN_ID              VARCHAR(19)    
+    RELPSN_CTL_TEL             VARCHAR(50)    
+    REL_EDDT                   CHAR(8)        
+    REL_EDTMD                  CHAR(6)        
+    REL_STDT                   CHAR(8)        
+    REL_STTMD                  CHAR(6)        
+    TELCTMOD_ITNL_DSTCNO       VARCHAR(4)     
+    TMS                        TIMESTAMP(8)   
+================================================================================
+TBCCtEL0 | 参与人电话联系方式 | 19 fields
+    IP_TELCTCMOD_EFDT          CHAR(8)        参与人电话联系方式生效日期
+    IP_TELCTCMOD_EXPDT         CHAR(8)        参与人电话联系方式失效日期
+    IP_TELCTCMOD_MDF_RDSC      VARCHAR(30)    参与人电话联系方式变更原因描述
+    IP_TELCTCMOD_SN            DECIMAL(22)    #参与人电话联系方式序号
+    IP_TEL_ADR_USE_TPCD        CHAR(7)        参与人电话地址用途类型代码
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    ORG_ID                     VARCHAR(19)    组织编号
+    TELCTCMOD_DMST_DSTCNO      VARCHAR(4)     电话联系方式国内区号
+    TELCTCMOD_EXN_NO           VARCHAR(6)     电话联系方式分机号码
+    TELCTCMOD_HST_NO           VARCHAR(30)    电话联系方式主机号码
+    TELCTCMOD_ITNL_DSTCNO      VARCHAR(4)     电话联系方式国际区号
+    TELCTCMOD_TPCD             CHAR(1)        电话联系方式类型代码
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBCCXCD0 | 参与人外部编号信息 | 21 fields
+    ANULINSPTN_DT              CHAR(8)        年检日期
+    ANULINSPTN_QLFD_IND        CHAR(1)        年检合格标志
+    ANULINSPTN_VLD_IND         CHAR(1)        年检有效标志
+    CRDT_IMG_ID                VARCHAR(120)   证件影像编号
+    EFDT                       CHAR(8)        生效日期
+    EXPDT                      CHAR(8)        失效日期
+    ID_INF_NM                  VARCHAR(180)   识别信息名称
+    IP_EXT_ID                  VARCHAR(240)   参与人外部编号
+    IP_EXT_ID_SN               DECIMAL(22)    #参与人外部编号序号
+    IP_EXT_ID_TPCD             CHAR(2)        参与人外部编号类型代码
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    ONLNPCSGIND_1_BMP_ECD      VARCHAR(120)   #联机处理标志一位图编码
+    ORG_ID                     VARCHAR(19)    组织编号
+    RMRK_INF                   VARCHAR(60)    备注信息
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TBPC1000 | 客户证件识别信息 | 29 fields
+    BLNG_CTY_CD                CHAR(3)        所属国家地区代码
+    CRDTIDINFSMSRMNDR_IDR      CHAR(1)        证件识别信息短信提醒标识
+    CRDT_EFDT                  CHAR(8)        证件生效日期
+    CRDT_EXDAT                 CHAR(8)        证件到期日期
+    CRDT_NO                    VARCHAR(120)   证件号码
+    CRDT_TPCD                  CHAR(4)        证件类型代码
+    CRDT_VRF_IND               CHAR(1)        证件核对标志
+    CRT_EMPID                  CHAR(8)        创建员工编号
+    CRT_INSID                  CHAR(9)        创建机构编号
+    CRT_STM_NO                 CHAR(6)        #创建系统号
+    CST_ID                     CHAR(18)       客户编号
+    CUR_STM_CRT_TMS            TIMESTAMP(8)   #当前系统创建时间戳
+    CUR_STM_UDT_TMS            TIMESTAMP(8)   #当前系统更新时间戳
+    DOWN_STEP_PCSG_MTDCD       CHAR(1)        #下步处理方式代码
+    ISSUCTF_AHR_LO             VARCHAR(240)   发证机关所在地
+    ISSUCTF_AHR_NM             VARCHAR(180)   发证机关名称
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    ORIG_CRDT_NO               VARCHAR(120)   原始证件号码
+    ORIG_LGL_NM                VARCHAR(180)   原始法定名称
+    RCRD_EXPY_TMS              TIMESTAMP(8)   #记录失效时间戳
+    RSRV_CST_ID                CHAR(18)       备用客户编号
+    SRCSYS_CRT_TMS             TIMESTAMP(8)   #源系统创建时间戳
+    SRCSYS_UDT_TMS             TIMESTAMP(8)   #源系统更新时间戳
+    UDT_STM_NO                 CHAR(6)        #更新系统号
+    UNBL_PCSG_RSCD             CHAR(1)        #无法处理原因代码
+================================================================================
+TBPC1010 | 客户基本信息 | 83 fields
+    BEST_CTC_MTDCD             CHAR(2)        最佳联系方式代码
+    BEST_CTC_TEL               VARCHAR(50)    最佳联系电话
+    BEST_CTC_TM_CD             CHAR(2)        最佳联系时间代码
+    BLNG_INSID                 CHAR(9)        所属机构编号
+    BRTH_DT                    CHAR(8)        出生日期
+    CCB_EMPE_IND               CHAR(1)        开员工标志
+    CHL_STTN_CD                CHAR(2)        子女状况代码
+    CRDT_NO                    VARCHAR(120)   证件号码
+    CRDT_TPCD                  CHAR(4)        证件类型代码
+    CRT_EMPID                  CHAR(8)        创建员工编号
+    CRT_INSID                  CHAR(9)        创建机构编号
+    CRT_STM_NO                 CHAR(6)        #创建系统号
+    CSTMGR_ID                  VARCHAR(12)    客户经理编号
+    CST_CHNL_BSOP_IND          CHAR(1)        客户渠道商机标志
+    CST_ID                     CHAR(18)       客户编号
+    CUR_STM_CRT_TMS            TIMESTAMP(8)   #当前系统创建时间戳
+    CUR_STM_UDT_TMS            TIMESTAMP(8)   #当前系统更新时间戳
+    EDDGR_CD                   CHAR(3)        学历代码
+    EMPCHNL_BSOP_IND           CHAR(1)        #员工渠道商机标志
+    ENLGPS_IND                 CHAR(1)        企业法人标志
+    ENTP_ACT_CTRL_PSN_IND      CHAR(1)        企业实际控制人标志
+    ENTP_ADV_MGTPPL_IND        CHAR(1)        企业高级管理人员标志
+    ETHNCT_CD                  CHAR(2)        民族代码
+    GND_CD                     CHAR(2)        性别代码
+    HSHLDRGST_ADIV_CD          CHAR(6)        户籍行政区划代码
+    IDCST_AUM_BAL              DECIMAL(22)    个人客户AUM余额
+    IDV_HBB_DSC                VARCHAR(600)   个人爱好描述
+    IDV_LGL_NM                 VARCHAR(180)   个人法定名称
+    IDV_NM_CPA_FULLNM          VARCHAR(60)    个人姓名拼音全称
+    IDV_RSM                    VARCHAR(1500)  个人简历
+    IMPT_PSNG_IND              CHAR(1)        重要人士标志
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    LCS_CD                     CHAR(6)        生命周期状态代码
+    LVI_BR_NO                  CHAR(9)        一级分行号
+    MAR_STTN_CD                CHAR(2)        婚姻状况代码
+    MNUl_EVL_CST_GRD_CD        CHAR(4)        手工评定客户等级代码
+    MT_ENT_IND                 CHAR(1)        #多实体标志
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    NAT_CD                     CHAR(3)        国籍地区代码
+    NON_RSDNT_IND              CHAR(1)        非居民标志
+    OCP_CD                     CHAR(5)        职业代码
+    PLN_FNC_EFCT_IND           CHAR(1)        计划财务有效客户标志
+    PLTCLPARTY_CD              CHAR(2)        政治面貌代码
+    POST_TPCD                  CHAR(3)        职务类型代码
+    PREF_LNG_CD                CHAR(2)        首选语言代码
+    PREF_MSND_MTDCD            CHAR(2)        偏好寄送方式代码
+    PRVT_BNK_CST_GRD_CD        CHAR(4)        私人银行客户等级代码
+    PRVT_BNK_SIGN_CST_IND      CHAR(1)        私人银行签约客户标志
+    PTNL_VIP_IND               CHAR(1)        潜力VIP标志
+    PTNL_VIP_IND               CHAR(1)        潜力VIP标志
+    RCRD_EXPY_TMS              TIMESTAMP(8)   #记录失效时间戳
+    RCRD_EXPY_TMS              TIMESTAMP(8)   #记录失效时间戳
+    RCV_MAIL_ADR_TPCD          CHAR(2)        接收邮寄地址类型代码
+    RCV_MAIL_ADR_TPCD          CHAR(2)        接收邮寄地址类型代码
+    REG_AFM_RELPARTY_IND       CHAR(1)        监管认定关联方标志
+    RELPARTY_IND               CHAR(1)        关联方标志
+    RELPARTY_IND               CHAR(1)        关联方标志
+    RLG_CD                     CHAR(4)        宗教信仰代码
+    RLG_CD                     CHAR(4)        宗教信仰代码
+    RSDNC_NAT_CD               CHAR(3)        居住国家地区代码
+    RSDNC_NAT_CD               CHAR(3)        原居住国家地区代码
+    RSRV_FLD1_INF              VARCHAR(60)    #备用字段1信息
+    RSRV_FLD1_INF              VARCHAR(60)    #备用字段1信息
+    RSRV_FLD2_INF              VARCHAR(60)    #备用字段2信息
+    RSRV_FLD2_INF              VARCHAR(60)    #备用字段2信息
+    RSRV_FLD3_INF              VARCHAR(60)    #备用字段3信息
+    RSRV_FLD3_INF              VARCHAR(60)    #备用字段3信息
+    SPCLVIP_IND                CHAR(1)        特殊vip标志
+    SPCLVIP_IND                CHAR(1)        特殊vip标志
+    SPNMLT_IND                 CHAR(1)        特殊名单标志
+    SRCSYS_CRT_TMS             TIMESTAMP(8)   #原系统创建时间戳
+    SRCSYS_CRT_TMS             TIMESTAMP(8)   #源系统创建时间戳
+    SRCSYS_UDT_TMS             TIMESTAMP(8)   #原系统更新时间戳
+    SRCSYS_UDT_TMS             TIMESTAMP(8)   #源系统更新时间戳
+    STM_EVL_CST_GRD_CD         CHAR(4)        系统评定客户等级代码
+    STM_EVL_CST_GRD_CD         CHAR(4)        系统评定客户等级代码
+    TEL_TPCD                   CHAR(2)        电话类型代码
+    UDT_STM_NO                 CHAR(6)        #更新系统号
+    WRK_UNIT_CHAR_CD           CHAR(4)        工作单位性质代码
+    WRK_UNIT_NM                VARCHAR(600)   工作单位名称
+================================================================================
+TBPC1S40 | 客户联系电话信息 | 25 fields
+    CRDT_TPCD                  CHAR(4)        证件类型代码
+    CRT_EMPID                  CHAR(8)        创建员工编号
+    CRT_INSID                  CHAR(9)        创建机构编号
+    CRT_STM_NO                 CHAR(6)        #创建系统号
+    CST_ID                     CHAR(18)       客户编号
+    CTC_INF_TPCD               CHAR(3)        联系信息类型代码
+    CUR_STM_CRT_TMS            TIMESTAMP(8)   #当前系统创建时间戳
+    CUR_STM_UDT_TMS            TIMESTAMP(8)   #当前系统更新时间戳
+    DATA_USE                   VARCHAR(100)   #数据用途
+    IDV_CTC_INF_SN             DECIMAL(22)    #个人联系信息序号
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    RCRD_EXPY_TMS              TIMESTAMP(8)   #记录失效时间戳
+    SRCSYS_CRT_TMS             TIMESTAMP(8)   #源系统创建时间戳
+    SRCSYS_UDT_TMS             TIMESTAMP(8)   #源系统更新时间戳
+    TELCTCMOD_DMST_DSTCNO      VARCHAR(4)     电话联系方式国内区号
+    TELCTCMOD_EXN_NO           VARCHAR(6)     电话联系方式分机号码
+    TELCTCMOD_ITNL_DSTCNO      VARCHAR(4)     电话联系方式国际区号
+    TELCTCMOD_NO               VARCHAR(50)    电话联系方式号码
+    UDT_STM_NO                 CHAR(6)        #更新系统号
+    VERF_IND                   CHAR(1)        #校验标志
+    VERF_PCSG_DT               CHAR(8)        #校验处理日期
+================================================================================
+TBPCA100 | 客户证件识别信息 | 36 fields
+    CST_ID                     CHAR(18)       
+    DEPT_NM                    VARCHAR(240)   
+    EDDT                       CHAR(8)        
+    LAST_UDT_EMPID             CHAR(8)        
+    LAST_UDT_INSID             CHAR(9)        
+    LAST_UDT_JRNL_NO           CHAR(25)       
+    LAST_UDT_OPRGDAY           CHAR(8)        
+    LCL_HR_GRD_SCND            CHAR(9)        
+    LCL_YRMO_DAY               CHAR(8)        
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    
+    MULTI_TENANCY_ID           CHAR(5)        
+    POST                       VARCHAR(150)   
+    RCRD_EXPY_TMS              TIMESTAMP(8)   
+    RMRK                       VARCHAR(600)   
+    SN                         DECIMAL(22)    
+    STDT                       CHAR(8)        
+    TMS                        TIMESTAMP(8)   
+    WRK_UNIT_NM                VARCHAR(600)   
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       #最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        #最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        #本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        #本地年月日
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MULTI_TENANCY_ID           CHAR(5)        #多实体标识
+    POST                       VARCHAR(150)   职务
+    RCRD_EXPY_TMS              TIMESTAMP(8)   #记录失效时间戳
+    RMRK                       VARCHAR(600)   备注
+    SN                         DECIMAL(22)    #序号
+    STDT                       CHAR(8)        开始日期
+    TMS                        TIMESTAMP(8)   #时间戳
+    WRK_UNIT_NM                VARCHAR(600)   工作单位名称
+    CST_ID                     CHAR(18)       客户编号
+    DEPT_NM                    VARCHAR(240)   部门名称
+    EDDT                       CHAR(8)        结束日期
+================================================================================
+TBPCA110 | 教育情况表 | 17 fields
+    CST_ID                     CHAR(18)       客户编号
+    EDDGR                      VARCHAR(40)    学历
+    EDDT                       CHAR(8)        结束日期
+    GRDT_SCH_NM                VARCHAR(600)   毕业学校名称
+    LAST_UDT_EMPID             CHAR(8)        最后更新员工编号
+    LAST_UDT_INSID             CHAR(9)        最后更新机构编号
+    LAST_UDT_JRNL_NO           CHAR(25)       最后更新流水号
+    LAST_UDT_OPRGDAY           CHAR(8)        最后更新营业日
+    LCL_HR_GRD_SCND            CHAR(9)        本地时分秒
+    LCL_YRMO_DAY               CHAR(8)        本地年月日
+    MOD_RCRD_LAST_MDSN         DECIMAL(22)    修改记录最后变更序号
+    MULTI_TENANCY_ID           CHAR(5)        多实体标识
+    RCRD_EXPY_TMS              TIMESTAMP(8)   #记录失效时间戳
+    RMRK                       VARCHAR(600)   备注
+    SN                         DECIMAL(22)    #序号
+    STDT                       CHAR(8)        开始日期
+    TMS                        TIMESTAMP(8)   #时间戳
+================================================================================
+TSCCPN000_5 | 个人识别信息 | 13 fields
+    ANULNSPTN_VLD_IND          CHAR(1)        年检有效标志
+    CRDT_ANULNSPTN_DT          CHAR(8)        证件年检日期
+    CRDT_EFDT                  CHAR(8)        证件生效日期
+    CRDT_EXDAT                 CHAR(8)        证件到期日期
+    CRDT_IMG_ID                VARCHAR(120)   证件影像编号
+    CTYRGON_CD                 CHAR(3)        国家地区代码
+    ID_INF_NO                  VARCHAR(120)   识别信息号
+    ID_INF_SN                  DECIMAL(22)    识别信息序号
+    ID_INF_TPCD                CHAR(4)        识别信息类型代码
+    IPD_CUR_STCD               CHAR(6)        参与人识别信息当前状态代码
+    IPD_EDDT                   CHAR(8)        #参与人识别信息结束日期
+    IPD_STDT                   CHAR(8)        #参与人识别信息开始日期
+    ISSUCTF_AHR_LD             VARCHAR(240)   发证机关所在地
