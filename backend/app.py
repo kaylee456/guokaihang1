@@ -141,6 +141,56 @@ async def financial_indicators(
     }
 
 
+# ---------- 客户业务信息查询 Skill（6 张 RPT 业务统计表）----------
+class CustomerBusinessAskRequest(BaseModel):
+    query: str = Field(..., description="用户的自然语言问题，如「查西安正和科技的贷款和存款」")
+
+
+@app.post("/skill/customer_business/query")
+async def customer_business_query(req: CustomerBusinessAskRequest) -> dict:
+    """客户业务信息查询主入口：自然语言问题 → 6 张业务表结构化明细（含来源表标注）。
+
+    处理链：LLM 抽参（客户名/编号、机构、想查的业务表）→ 确定性固定 SQL 取数。
+    取数不经 LLM，杜绝编造。status 取值：
+      ok / not_found / multiple / no_business_data / empty_input / error
+    """
+    from backend.skills.customer_business_qa import CustomerBusinessQA
+
+    try:
+        return await CustomerBusinessQA().ask(req.query)
+    except Exception as exc:  # noqa: BLE001 — 兜底避免 500 裸抛
+        return {"status": "error", "message": f"查询出错：{exc}", "data": [], "error": str(exc)}
+
+
+class CustomerBusinessFetchRequest(BaseModel):
+    name_or_id: str = Field(..., description="客户名称 CST_NM 或客户编号 CST_ID")
+    org_id: str | None = Field(None, description="可选，机构编号（客户所属分行），多命中时定位")
+    tables: list[str] | None = Field(None, description="可选，指定只查的业务表子集；缺省查全部 6 张")
+
+
+@app.post("/skill/customer_business/fetch")
+async def customer_business_fetch(req: CustomerBusinessFetchRequest) -> dict:
+    """免 LLM 直取（前端/联调用）：直接传结构化参数，不做自然语言抽参。"""
+    from backend.skills.customer_business_qa import CustomerBusinessQA
+
+    try:
+        return CustomerBusinessQA().query(req.name_or_id, req.org_id, req.tables)
+    except Exception as exc:  # noqa: BLE001 — 兜底避免 500 裸抛
+        return {"status": "error", "message": f"查询出错：{exc}", "data": [], "error": str(exc)}
+
+
+@app.get("/skill/customer_business/resolve")
+async def customer_business_resolve(customer: str, org_id: str | None = None) -> dict:
+    """仅做客户解析：按名/编号在 6 表匹配，返回候选（含各自命中的来源表）。"""
+    from backend.skills.customer_business_data import CustomerBusinessData
+
+    cbd = CustomerBusinessData()
+    cands = cbd.resolve_customer(customer)
+    if org_id:
+        cands = [c for c in cands if c["org_id"] == org_id]
+    return {"ok": bool(cands), "count": len(cands), "candidates": cands}
+
+
 def main() -> None:
     import uvicorn
 
