@@ -38,7 +38,7 @@ start() {
     if is_running; then
         echo "started OK (PID $(cat "$PID_FILE"))"
         echo "  health: curl http://127.0.0.1:$PORT/health"
-        echo "  ask:    POST http://127.0.0.1:$PORT/skill/financial/ask  body {question: ...}"
+        echo "  query:  POST http://127.0.0.1:$PORT/skill/financial/query  body {question: ...}"
     else
         echo "start FAILED, log tail:"
         tail -15 "$LOG_FILE"

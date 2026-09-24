@@ -48,6 +48,52 @@ class DMClient:
         rows = self.query(sql, params)
         return rows[0] if rows else None
 
+    def execute(self, sql: str, params: Sequence[Any] | None = None) -> int:
+        """执行单条写操作（INSERT / UPDATE / DELETE），返回受影响行数。
+
+        参数化占位符 ?，杜绝 SQL 注入。提交成功后返回 rowcount；
+        异常时回滚并向上抛出，由上层转成统一错误结构。
+        """
+        conn = self._connect()
+        try:
+            cur = conn.cursor()
+            try:
+                cur.execute(sql, params or [])
+                affected = cur.rowcount
+                conn.commit()
+                return affected
+            except Exception:
+                conn.rollback()
+                raise
+            finally:
+                cur.close()
+        finally:
+            conn.close()
+
+    def execute_many(self, statements: Sequence[tuple[str, Sequence[Any]]]) -> int:
+        """在同一事务内按顺序执行多条写操作，全部成功才提交，任一失败整体回滚。
+
+        用于主表 + 详情表需保持一致性的场景。statements 为 (sql, params) 序列。
+        返回受影响总行数。
+        """
+        conn = self._connect()
+        try:
+            cur = conn.cursor()
+            try:
+                total = 0
+                for sql, params in statements:
+                    cur.execute(sql, list(params) if params else [])
+                    total += cur.rowcount
+                conn.commit()
+                return total
+            except Exception:
+                conn.rollback()
+                raise
+            finally:
+                cur.close()
+        finally:
+            conn.close()
+
     def ping(self) -> bool:
         """连通性自检。"""
         return self.query_one("SELECT 1 AS ok") is not None

@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from backend.common import response as resp
 from backend.config import get_settings
 from backend.llm.client import LLMClient
 from backend.skills.financial_data import FinancialData
@@ -70,23 +71,21 @@ class FinancialQA:
 
     # ---------- 主入口 ----------
     async def ask(self, question: str) -> dict[str, Any]:
+        """自然语言财务问题 → 中文回答 + 结构化指标数据。
+
+        统一返回信封 {status, message, data, ...}（对齐 customer_business / customer_mgmt），
+        answer / extracted 字段在所有状态路径恒存在，便于前端统一分派。
+        """
         params = await self._extract(question)
 
         # 1) 解析客户
         cands = self._fd.resolve_customer(params.get("customer", ""))
         if not cands:
-            return {
-                "answer": "没有找到匹配的客户，请提供更准确的客户名称、业务编号或客户ID。",
-                "resolved": None,
-                "data": [],
-            }
+            msg = "没有找到匹配的客户，请提供更准确的客户名称、业务编号或客户ID。"
+            return {**resp.not_found(msg), "answer": msg, "extracted": params}
         if len(cands) > 1:
-            return {
-                "answer": f"匹配到 {len(cands)} 个客户，请确认具体是哪一个。",
-                "resolved": None,
-                "candidates": cands,
-                "data": [],
-            }
+            msg = f"匹配到 {len(cands)} 个客户，请确认具体是哪一个。"
+            return {**resp.multiple(cands, msg), "answer": msg, "extracted": params}
         cust = cands[0]
         cid = cust["id"]
 
@@ -97,10 +96,11 @@ class FinancialQA:
         if not (year and cycle and period):
             latest = self._fd.latest_period(cid)
             if not latest:
+                msg = f"客户「{cust['customer_name']}」暂无可用的财务指标数据。"
                 return {
-                    "answer": f"客户「{cust['customer_name']}」暂无可用的财务指标数据。",
-                    "resolved": cust,
-                    "data": [],
+                    **resp.not_found(msg, resolved=cust),
+                    "answer": msg,
+                    "extracted": params,
                 }
             year, cycle, period = latest["report_year"], latest["cycle_type"], latest["period_no"]
 
@@ -125,9 +125,9 @@ class FinancialQA:
         answer = await self._synthesize(question, context)
 
         return {
+            **resp.ok(rows),
             "answer": answer.strip(),
             "resolved": cust,
             "period": {"year": year, "cycle": cycle, "period_no": period},
             "extracted": params,
-            "data": rows,
         }

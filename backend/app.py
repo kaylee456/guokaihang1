@@ -98,15 +98,16 @@ class FinancialAskRequest(BaseModel):
     question: str = Field(..., description="用户的财务问题（自然语言）")
 
 
-@app.post("/skill/financial/ask")
-async def financial_ask(req: FinancialAskRequest) -> dict:
+@app.post("/skill/financial/query")
+async def financial_query(req: FinancialAskRequest) -> dict:
     """财务问答主入口：自然语言问题 → 中文回答 + 结构化指标数据。"""
+    from backend.common import response as resp
     from backend.skills.financial_qa import FinancialQA
 
     try:
         return await FinancialQA().ask(req.question)
     except Exception as exc:  # noqa: BLE001 — 兜底返回错误，避免 500 裸抛
-        return {"answer": f"查询出错：{exc}", "data": [], "error": str(exc)}
+        return resp.error(exc)
 
 
 @app.get("/skill/financial/indicators")
@@ -189,6 +190,81 @@ async def customer_business_resolve(customer: str, org_id: str | None = None) ->
     if org_id:
         cands = [c for c in cands if c["org_id"] == org_id]
     return {"ok": bool(cands), "count": len(cands), "candidates": cands}
+
+
+# ---------- 客户管理情况 Skill（参与人/客户/供求关系/经营主责人）----------
+# 本期切片：不含自动评分/自动分类/手工分类保存（依赖评分规则，后续里程碑）。
+# 统一返回 backend.common.response 信封；本期不做鉴权。
+def _cm_service():
+    from backend.skills.customer_mgmt_service import CustomerMgmtService
+
+    return CustomerMgmtService()
+
+
+class CustomerMgmtAskRequest(BaseModel):
+    query: str = Field(..., description="用户的自然语言问题，如「查一下测试科技的经营主责人」")
+
+
+@app.post("/skill/customer_mgmt/query")
+async def cm_query(req: CustomerMgmtAskRequest) -> dict:
+    """主入口（对齐 customer_business/query）：自然语言 → 客户管理概览 + 中文回答。
+
+    处理链：LLM 抽参（参与人名称/编号、机构）→ 确定性固定 SQL 取数 → LLM 合成 answer。
+    取数不经 LLM，杜绝编造。status 取值：
+      ok / not_found / multiple / empty_input / invalid_input / error；ok 时附加 answer。
+    """
+    from backend.common import response as resp
+
+    try:
+        return await _cm_service().ask(req.query)
+    except Exception as exc:  # noqa: BLE001 — 兜底避免 500 裸抛
+        return resp.error(exc)
+
+
+class CustomerMgmtFetchRequest(BaseModel):
+    keyword: str = Field(..., description="参与人名称 CST_FULLNM 或客户编号 CST_ID")
+    org_id: str | None = Field(None, description="可选，机构编号（客户所属分行），多命中时定位")
+
+
+@app.post("/skill/customer_mgmt/fetch")
+async def cm_fetch(req: CustomerMgmtFetchRequest) -> dict:
+    """免 LLM 直取（前端/联调用）：结构化参数 → 客户管理概览（无 answer 字段）。"""
+    from backend.common import response as resp
+
+    try:
+        return _cm_service().query(req.keyword, req.org_id)
+    except Exception as exc:  # noqa: BLE001 — 兜底避免 500 裸抛
+        return resp.error(exc)
+
+
+@app.get("/skill/customer_mgmt/manager_customer_count")
+async def cm_manager_customer_count(manager_oa: str) -> dict:
+    """统计某经营主责人（工号）当前负责的客户数。按工号查，故独立成口。"""
+    from backend.common import response as resp
+
+    try:
+        return _cm_service().count_customers_by_manager(manager_oa)
+    except Exception as exc:  # noqa: BLE001
+        return resp.error(exc)
+
+
+class MainManagerSaveRequest(BaseModel):
+    cst_id: str = Field(..., description="客户编号（该客户无主责人记录时新增，已有则更新）")
+    operator: str = Field(..., description="当前操作员工号，写入创建/修改审计列")
+    fields: dict = Field(..., description="主责人业务字段（仅白名单列生效）")
+
+
+@app.post("/skill/customer_mgmt/main_manager/save")
+async def cm_main_manager_save(req: MainManagerSaveRequest) -> dict:
+    """保存客户经营主责人（以 CST_ID 为键）：无记录=新增，已有=更新。"""
+    from backend.common import response as resp
+
+    try:
+        return _cm_service().save_main_manager(
+            req.cst_id, req.operator, req.fields
+        )
+    except Exception as exc:  # noqa: BLE001
+        return resp.error(exc)
 
 
 def main() -> None:
